@@ -193,20 +193,70 @@
          La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
       */
 
-      const generateTable = function () {};
+      const generateTable = function () {
+        const divTable = document.getElementById("tableArea");
+        const table = document.createElement("table");
+        const tr1 = document.createElement("tr");
 
+        const thImg = document.createElement("th");
+        const thProd = document.createElement("th");
+        const thQua = document.createElement("th");
+        const thPrice = document.createElement("th");
+
+        thImg.innerText = "Immagine";
+        thProd.innerText = "Nome Prodotto";
+        thQua.innerText = "Quantità";
+        thPrice.innerText = "Prezzo";
+
+        tr1.appendChild(thImg);
+        tr1.appendChild(thProd);
+        tr1.appendChild(thQua);
+        tr1.appendChild(thPrice);
+        divTable.appendChild(table);
+        table.appendChild(tr1);
+
+        const tr2 = document.createElement("tr");
+        const td1Img = document.createElement("td");
+        const td1Prod = document.createElement("td");
+        const td1Quan = document.createElement("td");
+        const td1Price = document.createElement("td");
+
+        const img = document.createElement("img");
+        img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7ueL6LC5g7NYZwnPLM2LS7yOgG7PSn4CKpQ&s";
+        img.alt = "ferrari auto";
+        img.width = "200";
+        td1Img.appendChild(img);
+        td1Prod.innerText = "Ferrari";
+        td1Quan.innerText = 10;
+        td1Price.innerText = "1.000.000€";
+
+        table.appendChild(tr2);
+        tr2.appendChild(td1Img);
+        tr2.appendChild(td1Prod);
+        tr2.appendChild(td1Quan);
+        tr2.appendChild(td1Price);
+      };
+      generateTable();
       /* ESERCIZIO 12
          Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
       */
 
-      const addRow = function () {};
-
+      const addRow = function () {
+        const tr3 = document.createElement("tr");
+        const table = document.querySelector("table");
+        tr3.innerText = "Ciao sono la terza riga";
+        table.appendChild(tr3);
+      };
+      addRow();
       /* ESERCIZIO 14
         Crea una funzione che nasconda le immagini della tabella quando eseguita
       */
 
-      const hideAllImages = function () {};
-
+      const hideAllImages = function () {
+        const img = document.querySelector("img");
+        img.style.display = "none";
+      };
+      hideAllImages();
       /* EXTRA ESERCIZIO 15
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
       */
